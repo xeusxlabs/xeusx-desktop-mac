@@ -105,6 +105,20 @@ Supported profile families may include:
 
 Availability depends on the server token you import and the server configuration you use.
 
+
+---
+
+## Single-hop or multi-hop routes
+
+Choose the path that fits the moment: keep it simple with one trusted server, or build a stronger multi-server route across the infrastructure you control.
+
+With Xeusx+, your VPN path is not locked to a single exit. When your server configuration supports it, you can route traffic through an **entry server**, pass it through one or more **relay servers**, and exit from a final **exit server** location.
+
+```text
+🇺🇸 United States → 🇬🇧 United Kingdom → 🇫🇷 France → 🇺🇸 United States
+Entry server      Relay server       Relay server   Exit server
+```
+
 ---
 
 ## Smart routing
