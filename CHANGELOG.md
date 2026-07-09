@@ -1,6 +1,19 @@
 # Changelog
 
-All notable changes to the public **Xeusx+ for macOS** build are recorded here. Each release lists what changed, the bundled **Orb server agent** version, and the **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app updater checks the same checksum and a cryptographic signature before installing.
+All notable changes to the public **Xeusx for macOS** client are recorded here.
+Each release lists what changed, the bundled **Orb server agent** version, and the
+**SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
+updater checks the same checksum and a cryptographic signature before installing.
+
+## Xeusx+ 26.1.2+1 — 2026-07-09
+
+- Added Orb-managed mux controls for constrained hosts and low-concurrency networks, improving Shadowsocks reliability and throughput under provider limits.
+- Faster protocol health detection and failover with low-latency pre-probing and traffic-flow recovery, so automatic switching moves from blocked to reachable protocols according to Settings preferences.
+- Improved Orb server setup and upgrade reliability across Ubuntu 22, 24, and 26.
+
+SHA-256 (`Xeusx+.dmg`): `63bddf45f582a357379e494629e5eb87877abb597c6dd3bc041482a877fb6cc3`
+
+Orb server agent: `26.1.2+3`
 
 ## Xeusx+ 26.1.1+2 — 2026-07-07
 
