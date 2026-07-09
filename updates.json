@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "1",
+    "build": "2",
     "dmgURL": "https://raw.githubusercontent.com/xeusxlabs/xeusx-desktop-mac/main/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Added Orb-managed mux controls for constrained hosts and low-concurrency networks, improving Shadowsocks reliability and throughput under provider limits.\n- Faster protocol health detection and failover with low-latency pre-probing and traffic-flow recovery, so automatic switching moves from blocked to reachable protocols according to Settings preferences.\n- Improved Orb server setup and upgrade reliability across Ubuntu 22, 24, and 26.",
-    "sha256": "63bddf45f582a357379e494629e5eb87877abb597c6dd3bc041482a877fb6cc3",
+    "notes": "- Improved client update reliability: cryptographically verified downloads now survive app restarts and are reused instead of downloaded again.\n- Added clear Download Update and Restart to Update actions in the app and menu-bar menus.\n- Strengthened macOS compatibility validation, cancellation handling, and recovery from interrupted installs.",
+    "sha256": "8e6ca49163c912bbc20b4912b5a055c8116588fead43091bc0839b5a1d011b20",
     "version": "26.1.2"
   }
 }

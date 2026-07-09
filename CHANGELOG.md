@@ -5,6 +5,14 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.1.2+2 — 2026-07-09
+
+- Improved the stability of client app updates.
+
+SHA-256 (`Xeusx+.dmg`): `8e6ca49163c912bbc20b4912b5a055c8116588fead43091bc0839b5a1d011b20`
+
+Orb server agent: `26.1.2+3`
+
 ## Xeusx+ 26.1.2+1 — 2026-07-09
 
 - Added Orb-managed mux controls for constrained hosts and low-concurrency networks, improving Shadowsocks reliability and throughput under provider limits.
