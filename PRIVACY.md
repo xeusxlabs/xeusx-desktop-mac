@@ -1,6 +1,6 @@
 # Xeusx Privacy Policy
 
-**Last updated: July 7, 2026**
+**Last updated: July 10, 2026**
 
 This Privacy Policy explains how **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**), handles information. Xeusx is a self-hosted VPN client and server manager designed so connection material and server-administration material stay on your Mac and under your control.
 
@@ -97,9 +97,28 @@ Xeusx may include third-party and open-source components governed by their own l
 
 The developer may update this Privacy Policy from time to time. Material changes will be reflected here with a new "Last updated" date. Continued use of Xeusx after an updated policy is posted means you accept the updated policy, unless applicable law requires a different process.
 
-## 13. Contact
+## 13. Contact and communications
 
-Questions about this Privacy Policy can be raised through the project's official GitHub repository.
+You may contact Xeusx Labs through **Contact Support** inside the app or by
+email at [support@xeusx.com](mailto:support@xeusx.com). Use one of these private
+channels for privacy questions, complaints, rights requests, security matters,
+or any message containing personal information or other sensitive details.
+
+For non-sensitive support requests and bug reports, use the public Xeusx for
+macOS issue tracker:
+<https://github.com/xeusxlabs/xeusx-desktop-mac/issues>.
+
+If you communicate through GitHub, GitHub processes your account name, message,
+and associated metadata under its own policy. Public issues are visible to
+others. Do not include connection tokens, passphrases, private keys, bearer
+credentials, SSH credentials, full server addresses, personal information, or
+unredacted diagnostic logs in a public issue.
+
+Information you voluntarily provide through a support channel is used only to
+respond, maintain security and functionality, enforce legal rights, or comply
+with law. A support, privacy, security, or legal communication may be retained
+for as long as reasonably necessary for those purposes, subject to applicable
+law and, for GitHub communications, GitHub's controls.
 
 ---
 

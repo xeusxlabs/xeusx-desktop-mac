@@ -1,6 +1,6 @@
 # Xeusx Terms of Use
 
-**Last updated: July 7, 2026**
+**Last updated: July 10, 2026**
 
 These Terms of Use (**"Terms"**) govern your download, installation, and use of **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**). By downloading, installing, or using Xeusx, you agree to these Terms. If you do not agree, do not download, install, or use Xeusx.
 
@@ -129,4 +129,17 @@ If any provision of these Terms is held unenforceable, the remaining provisions 
 
 ## 18. Contact
 
-Questions about these Terms can be raised through the project's official GitHub repository.
+**Support email:** [support@xeusx.com](mailto:support@xeusx.com)
+
+For private support, legal, privacy, security, or rights-related matters, use
+**Contact Support** inside the app or email
+[support@xeusx.com](mailto:support@xeusx.com). These are the preferred channels
+for confidential or sensitive communications.
+
+For non-sensitive support requests and bug reports, use the public Xeusx for
+macOS issue tracker:
+<https://github.com/xeusxlabs/xeusx-desktop-mac/issues>.
+
+GitHub issues are public. Do not include connection tokens, passphrases, private
+keys, full server addresses, bearer credentials, SSH credentials, personal
+information, or unredacted diagnostic logs in a public issue.

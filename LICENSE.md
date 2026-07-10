@@ -1,5 +1,7 @@
 # Xeusx License (Free to Use, Proprietary)
 
+**Last updated: July 10, 2026**
+
 Copyright © 2026 Xeusx Labs. All rights reserved.
 
 Xeusx for macOS, including the public **Xeusx+** build, the application, installer, updates, documentation, branding, and related materials (collectively, the **"Software"**), is **free to download and use** but is **proprietary software**. It is **licensed, not sold**, and it is **not open source**.
@@ -75,3 +77,21 @@ Xeusx is an independent product. It is not affiliated with, endorsed by, sponsor
 ## 12. General
 
 If any provision of this License is held unenforceable, the remaining provisions remain in effect, and the unenforceable provision will be enforced to the maximum extent permitted by law. The licensor's failure to enforce any provision is not a waiver. This License is the entire agreement between you and the licensor regarding the Software and supersedes any prior or contemporaneous understandings on that subject. Separate written terms may apply to paid, enterprise, beta, partner, source-access, managed-service, or specially licensed versions of Xeusx.
+
+## 13. Contact
+
+**Support email:** [support@xeusx.com](mailto:support@xeusx.com)
+
+For private support, privacy, legal, or security matters, use **Contact
+Support** inside the app or email
+[support@xeusx.com](mailto:support@xeusx.com). For non-sensitive support
+requests and bug reports, use the public Xeusx for macOS issue tracker:
+<https://github.com/xeusxlabs/xeusx-desktop-mac/issues>.
+
+Third-party-license and source-availability inquiries may also be sent to the
+support email or submitted through the issue tracker. Include the app version
+and build number in any release-specific inquiry.
+
+GitHub issues are public. Never include a connection token, passphrase, private
+key, bearer credential, SSH credential, full server address, personal
+information, or unredacted diagnostic log in a public issue.
