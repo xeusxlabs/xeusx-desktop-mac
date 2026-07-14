@@ -198,4 +198,34 @@ Third-party and open-source components included with Xeusx remain governed by th
 
 ---
 
+## Support Xeusx
+
+### Help keep Xeusx independent
+
+**Xeusx+ is free to download and use, with no feature paywalls or required account.** If Xeusx helps protect your connections, manage your infrastructure, or simplify remote access, you can support its continued independent development with a donation.
+
+Your support helps fund:
+
+- **Development** — ongoing improvements and new features.
+- **Security** — maintenance and hardening.
+- **Compatibility** — testing across macOS and server environments.
+- **Protocol upkeep** — protocol and dependency updates.
+- **Long-term maintenance** — reliable releases and continued project care.
+
+> [!NOTE]
+> Donations are entirely optional. They do not unlock features or provide priority support.
+
+- **Bitcoin (BTC)** — bc1q89fc7rqz0nex5vredpv6vr6dp8n69xguv6jh45
+- **Ethereum (ETH)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
+- **Solana (SOL)** — 4QcpqpyFr2DYrKctGQ6hTtLR3LUup4CVdyohviKgRJV7
+- **ERC-20 (USDT)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
+- **ERC-20 (USDC)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
+
+> [!IMPORTANT]
+> Cryptocurrency transfers are irreversible. Before sending, confirm that you are viewing the official repository at `github.com/xeusxlabs/xeusx-desktop-mac`. Use only the exact network listed beside the published address, verify the address carefully.
+
+**Thank you for helping keep Xeusx independent, maintained, and available to everyone.**
+
+---
+
 Xeusx and the Xeusx logo are trademarks of their respective owner. Apple, macOS, Mac, and Touch ID are trademarks of Apple Inc., registered in the U.S. and other countries and regions. GitHub is a trademark of GitHub, Inc. Use of these names is for identification only and does not imply affiliation, sponsorship, or endorsement.

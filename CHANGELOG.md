@@ -5,6 +5,17 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.1.2+3 — 2026-07-14
+
+- **[Beta] Orb Optical Token sharing:** Display a short-lived visual token that another Xeusx device can scan directly. For device-to-device setup, connection data stays offline and never passes through email, cloud storage, messaging services, or a Xeusx-operated relay.
+- **Bulk import:** Paste one or more Xeusx connection tokens from the clipboard, or import multiple `.xeusx` files in a single operation. This streamlines multi-server setup and reduces repetitive input and configuration errors.
+- **Help and Diagnostics:** A new Settings section brings support, the changelog, diagnostic controls, and local logs together in one place.
+- **Appearance controls:** Choose System, Light, or Dark mode. System follows macOS automatically, while Light and Dark keep the interface fixed to your preferred appearance.
+
+SHA-256 (`Xeusx+.dmg`): `4f1ca26afc3c77487c9351132f7c1e744625562f194157efcd220bb78f4bd17a`
+
+Orb server agent: `26.1.2+3`
+
 ## Xeusx+ 26.1.2+2 — 2026-07-09
 
 - Improved the stability of client app updates.

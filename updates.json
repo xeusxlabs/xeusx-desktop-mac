@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "2",
+    "build": "3",
     "dmgURL": "https://raw.githubusercontent.com/xeusxlabs/xeusx-desktop-mac/main/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Improved client update reliability: cryptographically verified downloads now survive app restarts and are reused instead of downloaded again.\n- Added clear Download Update and Restart to Update actions in the app and menu-bar menus.\n- Strengthened macOS compatibility validation, cancellation handling, and recovery from interrupted installs.",
-    "sha256": "8e6ca49163c912bbc20b4912b5a055c8116588fead43091bc0839b5a1d011b20",
+    "notes": "- **[Beta] Orb Optical Token sharing:** Display a short-lived visual token that another Xeusx device can scan directly. For device-to-device setup, connection data stays offline and never passes through email, cloud storage, messaging services, or a Xeusx-operated relay.\n- **Bulk import:** Paste one or more Xeusx connection tokens from the clipboard, or import multiple `.xeusx` files in a single operation. This streamlines multi-server setup and reduces repetitive input and configuration errors.\n- **Help and Diagnostics:** A new Settings section brings support, the changelog, diagnostic controls, and local logs together in one place.\n- **Appearance controls:** Choose System, Light, or Dark mode. System follows macOS automatically, while Light and Dark keep the interface fixed to your preferred appearance.",
+    "sha256": "4f1ca26afc3c77487c9351132f7c1e744625562f194157efcd220bb78f4bd17a",
     "version": "26.1.2"
   }
 }
