@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "3",
-    "dmgURL": "https://raw.githubusercontent.com/xeusxlabs/xeusx-desktop-mac/main/Xeusx+.dmg",
+    "build": "142",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.3+142/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- **[Beta] Orb Optical Token sharing:** Display a short-lived visual token that another Xeusx device can scan directly. For device-to-device setup, connection data stays offline and never passes through email, cloud storage, messaging services, or a Xeusx-operated relay.\n- **Bulk import:** Paste one or more Xeusx connection tokens from the clipboard, or import multiple `.xeusx` files in a single operation. This streamlines multi-server setup and reduces repetitive input and configuration errors.\n- **Help and Diagnostics:** A new Settings section brings support, the changelog, diagnostic controls, and local logs together in one place.\n- **Appearance controls:** Choose System, Light, or Dark mode. System follows macOS automatically, while Light and Dark keep the interface fixed to your preferred appearance.",
-    "sha256": "4f1ca26afc3c77487c9351132f7c1e744625562f194157efcd220bb78f4bd17a",
-    "version": "26.1.2"
+    "notes": "**Breaking change:** Legacy users continue to work after the update but cannot be migrated automatically to the new decentralized cluster-wide server and user management model. To migrate, create a new server cluster, recreate each legacy user as an access profile, and share a new Xeusx token.\n\n**New:**\n\n- **One access profile. One encrypted token.** Create an access profile for each authorized user, then grant or revoke access across the servers in your cluster. Each profile uses a single encrypted Xeusx token, while approved connections stay synchronized across the user\u2019s enrolled devices.\n- **Fleet-wide or server-specific access.** Grant an access profile access to every current and future Orb-managed server in the cluster, or restrict it to an explicit server list. With server-specific access, newly added servers remain unavailable until you explicitly grant access.\n- **Device-level control.** View and revoke devices enrolled under an access profile, and set a maximum device limit. Each enrolled device receives its own revocable connection identity, helping limit exposure if a token is copied or compromised.\n- **Traffic Rules Sharing.** Export Traffic Rules to `.xeusx` files and open them on any supported Xeusx device to preview the rules before importing. If the file also contains a Xeusx token, the connection and its Traffic Rules are imported together in one step.",
+    "sha256": "045eb793abfc426e8d70f3114264a9c94a25c239ee8b202da34c3f9e6378a442",
+    "version": "26.1.3"
   }
 }

@@ -1,6 +1,6 @@
 # Xeusx Terms of Use
 
-**Last updated: July 10, 2026**
+**Last updated: July 17, 2026**
 
 These Terms of Use (**"Terms"**) govern your download, installation, and use of **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**). By downloading, installing, or using Xeusx, you agree to these Terms. If you do not agree, do not download, install, or use Xeusx.
 
@@ -8,17 +8,19 @@ These Terms work together with the **[License](LICENSE.md)**, which governs your
 
 ## 1. What Xeusx is
 
-Xeusx is a native macOS app that connects your Mac to a private, self-hosted VPN server using an encrypted connection token issued by that server. The public **Xeusx+** build includes the Connect client and **Orb**, a built-in server manager that can provision and operate your own Xeusx VPN servers over SSH from the app.
+Xeusx is a native macOS app that connects your Mac to private, self-hosted VPN servers using one encrypted Xeusx token assigned to your authorized access. For these Terms, an **"Authorized Server"** is a compatible server that you own, administer, or have express permission to use. The term describes your authority to use the server; it does not mean Xeusx Labs has reviewed, approved, or certified it. The token represents the Xeusx connections assigned to that access and keeps them synchronized. The public **Xeusx+** build includes the Connect client and **Orb**, a built-in server manager that can provision and operate your own Authorized Servers over SSH from the app.
 
-Xeusx is **not** a VPN subscription, hosted VPN service, internet service provider, cloud relay, bandwidth provider, exit-node provider, managed security service, server-hosting company, or server administrator for you. The developer does not provide VPN servers, network access, exit locations, bandwidth, user accounts, app-usage analytics, or a backend that your app reports to. You supply the server, either your own or one operated by someone you trust.
+Xeusx is **not** a VPN subscription, hosted VPN service, internet service provider, cloud relay, bandwidth provider, exit-node provider, managed security service, server-hosting company, or server administrator for you. The developer does not provide VPN servers, network access, exit locations, bandwidth, user accounts, app-usage analytics, or a backend that your app reports to. Xeusx also does not discover, recommend, broker, certify, sell, or provide access to third-party VPN services.
 
-The developer does not host, operate, configure, secure, monitor, or manage any server for you, including servers you set up or manage with Orb. Orb runs on your Mac and acts on your instructions.
+The developer does not host, operate, configure, secure, monitor, or manage any Authorized Server for you, including servers you set up or manage with Orb. Orb runs on your Mac, acts on your instructions, and uses the server addresses and credentials you provide.
 
 ## 2. Eligibility and requirements
 
-To use Xeusx, you need a compatible Mac running **macOS 14 or later** and a valid connection token from a Xeusx-compatible server. To provision or manage servers with Orb, you also need a supported Ubuntu Linux server you own or are authorized to administer, with SSH access to it, and you are responsible for complying with your hosting provider's terms.
+To use Xeusx, you need a compatible Mac running **macOS 14 or later** and a valid Xeusx token and passphrase assigned to your authorized access. To provision or manage servers with Orb, you also need a supported Ubuntu Linux server you own or are authorized to administer, with SSH access to it, and you are responsible for complying with your hosting provider's terms.
 
 You must be legally able to enter into these Terms and legally permitted to use VPN, proxy, encryption, and server-management software — and to operate or administer a server — in the places that apply to you.
+
+Possession of a Xeusx token does not by itself establish authorization. You are responsible for confirming that every token and server is assigned to access you are entitled to use and for preventing unauthorized disclosure of credentials.
 
 ## 3. License and official downloads
 
@@ -26,22 +28,28 @@ Xeusx is free to download and use as an unmodified official build, but it is pro
 
 You may download official builds from official Xeusx distribution channels. You may share links to official download locations. You may not redistribute, mirror, re-upload, repackage, resell, rebrand, modify, reverse engineer, or create derivative versions of the app except as expressly allowed by the License or by a separate written agreement from the developer.
 
-## 4. Your server and your responsibility
+## 4. Your infrastructure and access credentials
 
-Xeusx connects to a server controlled by you or by a third party you choose. The developer does not operate that server, configure it, monitor it, supervise its users, validate its legality, review its security, or control what happens through it. This applies equally to servers you provision or manage with Orb: you remain the operator of every server Orb touches.
+Xeusx acts only on the server addresses, access credentials, and configuration you import or create. The developer does not operate, configure, monitor, supervise, validate, review, or secure any Authorized Server. This applies equally to servers you provision or manage with Orb: you remain responsible for every server Orb touches.
 
 You are solely responsible for:
 
-- your server, token, configuration, routing choices, and traffic;
+- your Authorized Servers, tokens, configuration, routing choices, and traffic;
 - provisioning, configuring, updating, securing, monitoring, backing up, and operating any server you set up or manage with Orb;
 - complying with your hosting provider's terms and acceptable-use policy;
-- the users you create and the tokens, links, or QR codes you distribute;
-- choosing a trustworthy server operator;
+- the access profiles, credentials, links, and QR codes you create, assign, export, revoke, or otherwise make available within a deployment you control;
+- verifying that every server and credential you use is authorized;
 - securing your device, server, credentials, passphrases, SSH keys, administrative keys, and hosting account;
-- complying with laws that apply to you, your users, your traffic, and your servers; and
-- any activity that occurs through your use of Xeusx or your server.
+- complying with laws that apply to you, your access profiles, your traffic, and your servers; and
+- any activity that occurs through your use of Xeusx or your server infrastructure.
 
-If another person or organization operates your server, that operator may be able to observe connection metadata or keep its own logs. Their practices are governed by them, not by Xeusx.
+If an Authorized Server is administered by another party, that party may process connection metadata or maintain server-side logs. Its practices are independent from Xeusx Labs and are not governed by these Terms.
+
+Orb lets you create access profiles across a server fleet and scope each profile to all current and future managed servers or only selected servers. When selected access is used, a new server is unavailable until it is added to that profile. An access profile is part of your server configuration; it is not a Xeusx Labs account, subscription, or managed service.
+
+One encrypted Xeusx token represents the Xeusx connections assigned to an access profile and keeps them synchronized. Removing server access remains effective on the server even before the device receives a later synchronization update. Only the connected Authorized Server is contacted during synchronization; requests are not sent to a Xeusx developer account or VPN backend.
+
+Synchronization is event-driven and may occur after relevant connection, app, system, or network events, or when you choose **Sync**. There is no periodic server-synchronization timer or continuous background polling loop. Checks do not run while the privacy vault is locked, and automatic checks are deferred without a suitable tunnel. The **[Privacy Policy](PRIVACY.md)** describes these requests in more detail.
 
 ## 5. Acceptable use
 
@@ -58,7 +66,7 @@ You agree to use Xeusx only for lawful, authorized, and responsible purposes. Yo
 - operate a paid, hosted, resale, managed, or public VPN/proxy service using Xeusx without a separate written agreement; or
 - tamper with app security, signing, update verification, integrity checks, privacy protections, anti-tamper mechanisms, or server-management restrictions.
 
-VPN, proxy, encryption, telecommunications, server-administration, and server-hosting rules vary by jurisdiction and may change. You are responsible for determining whether your use of Xeusx is lawful where you are located and where your traffic, server, or users may be located. Do not use Xeusx where it is restricted or prohibited.
+VPN, proxy, encryption, telecommunications, server-administration, and server-hosting rules vary by jurisdiction and may change. You are responsible for determining whether your use of Xeusx is lawful where you are located and where your traffic, servers, or authorized users may be located. Do not use Xeusx where it is restricted or prohibited.
 
 ## 6. Updates and availability
 
@@ -68,13 +76,13 @@ For security, you are responsible for downloading Xeusx from official locations,
 
 ## 7. Third-party services and components
 
-Xeusx may interact with or rely on third parties, including GitHub for official downloads and update delivery, Apple operating-system services, your selected server operator, your hosting provider, optional routing-rule sources you configure, operating-system package repositories, and bundled third-party or open-source components.
+Xeusx may interact with or rely on third parties, including GitHub for official downloads and update delivery, Apple operating-system services, your hosting provider, any independently administered Authorized Server you choose to use, optional routing-rule sources you configure, operating-system package repositories, and bundled third-party or open-source components.
 
 Those third parties are independent from the developer and are governed by their own terms, privacy policies, and licenses. The developer is not responsible for third-party services, infrastructure, content, logs, availability, security, or data practices.
 
 ## 8. Privacy
 
-The app is designed to avoid developer-operated accounts, analytics, advertising, telemetry, and traffic collection. The **[Privacy Policy](PRIVACY.md)** explains what the app stores locally, what optional network requests it may make, and what third parties may see when you download updates, connect to a server, or use Orb to administer servers.
+The app is designed to avoid developer-operated accounts, analytics, advertising, telemetry, and traffic collection. The **[Privacy Policy](PRIVACY.md)** explains what the app stores locally, what optional network requests it may make, and what independently controlled infrastructure and service providers may process when you download updates, connect to an Authorized Server, or use Orb to administer servers.
 
 ## 9. No emergency or high-risk use
 
@@ -102,7 +110,7 @@ To the maximum extent permitted by law, you agree to defend, indemnify, and hold
 
 - your use or misuse of Xeusx;
 - your use or misuse of Orb or any server-management function;
-- your server, configuration, tokens, users, hosting account, or traffic;
+- your server infrastructure, configuration, tokens, access profiles, hosting account, or traffic;
 - your violation of these Terms, the License, or applicable law;
 - your violation of any third-party right; or
 - any content, data, or activity transmitted through your use of Xeusx or your server.

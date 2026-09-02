@@ -5,6 +5,21 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.1.3+142 — 2026-09-02
+
+**Breaking change:** Legacy users continue to work after the update but cannot be migrated automatically to the new decentralized cluster-wide server and user management model. To migrate, create a new server cluster, recreate each legacy user as an access profile, and share a new Xeusx token.
+
+**New:**
+
+- **One access profile. One encrypted token.** Create an access profile for each authorized user, then grant or revoke access across the servers in your cluster. Each profile uses a single encrypted Xeusx token, while approved connections stay synchronized across the user’s enrolled devices.
+- **Fleet-wide or server-specific access.** Grant an access profile access to every current and future Orb-managed server in the cluster, or restrict it to an explicit server list. With server-specific access, newly added servers remain unavailable until you explicitly grant access.
+- **Device-level control.** View and revoke devices enrolled under an access profile, and set a maximum device limit. Each enrolled device receives its own revocable connection identity, helping limit exposure if a token is copied or compromised.
+- **Traffic Rules Sharing.** Export Traffic Rules to `.xeusx` files and open them on any supported Xeusx device to preview the rules before importing. If the file also contains a Xeusx token, the connection and its Traffic Rules are imported together in one step.
+
+SHA-256 (`Xeusx+.dmg`): `045eb793abfc426e8d70f3114264a9c94a25c239ee8b202da34c3f9e6378a442`
+
+Orb server agent: `26.1.4+140`
+
 ## Xeusx+ 26.1.2+3 — 2026-07-14
 
 - **[Beta] Orb Optical Token sharing:** Display a short-lived visual token that another Xeusx device can scan directly. For device-to-device setup, connection data stays offline and never passes through email, cloud storage, messaging services, or a Xeusx-operated relay.

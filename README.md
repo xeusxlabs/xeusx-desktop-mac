@@ -2,35 +2,36 @@
 
 **Self-hosted VPN control for macOS — connect, deploy, and manage your own private VPN infrastructure from one native Mac app.**
 
-Xeusx+ is built for people who want their VPN to be **theirs**. No subscription VPN cloud. No account. No tracking SDK. No company-operated relay in the middle. Import an encrypted token from a trusted Xeusx server, unlock it locally on your Mac, and connect through a resilient VPN client designed for difficult networks.
+Xeusx+ is built for people who want their VPN to be **theirs**. No subscription VPN cloud. No account. No tracking SDK. No company-operated relay in the middle. Import one encrypted Xeusx token for infrastructure you control or are expressly authorized to access, unlock it locally on your Mac, and keep the connections assigned to that token synchronized.
 
-Xeusx+ also includes **Orb**, a built-in server manager for creating and operating your own Xeusx VPN infrastructure. Point Orb at a supported Ubuntu Linux server you control or are authorized to administer, provision a complete self-hosted VPN, create users, mint encrypted connection tokens, manage connection methods, and push server updates — all from the Mac app, over SSH, without a Xeusx admin cloud.
+Xeusx+ also includes **Orb**, a built-in server manager for creating and operating your own Xeusx VPN infrastructure. Point Orb at supported Ubuntu Linux servers you control or are authorized to administer, provision a complete self-hosted VPN fleet, coordinate those servers as one resilient cluster, create scoped access profiles, export one encrypted Xeusx token per profile, and push server updates — all from the Mac app, over SSH, without a Xeusx admin cloud.
 
 <p align="center">
   <img src="xeusx-secure-vpn-desktop-mac-app.jpg" alt="Xeusx+ for macOS connected to a self-hosted server with automatic protocol selection" width="820">
   <br>
-  <sub><em>One-click connect, live status, adaptive connection methods, and server control — pointed at infrastructure you control.</em></sub>
+  <sub><em>One-click connect, live status, adaptive connection methods, and fleet control — pointed at infrastructure you control.</em></sub>
 </p>
 
-![macOS](https://img.shields.io/badge/macOS-14%2B-000000?logo=apple&logoColor=white)
+![macOS 14+](https://img.shields.io/badge/macOS-14%2B-000000?logo=apple&logoColor=white)
 ![Price](https://img.shields.io/badge/price-free-2ea44f)
 ![Privacy](https://img.shields.io/badge/privacy-no%20tracking-blue)
-![Self-hosted](https://img.shields.io/badge/VPN-self--hosted-6f42c1)
+![VPN](https://img.shields.io/badge/VPN-self--hosted-6f42c1)
+![Cluster](https://img.shields.io/badge/cluster-multi--server-8250df)
 ![Kill switch](https://img.shields.io/badge/kill%20switch-always%20on-orange)
-![Server manager](https://img.shields.io/badge/Orb-server%20manager-1f6feb)
+![Orb](https://img.shields.io/badge/Orb-fleet%20manager-1f6feb)
 
-> **Xeusx+ is not another VPN subscription app.** It is a private control layer for your own VPN infrastructure: token-based setup, local secrets, verified servers, adaptive transport, built-in server management with Orb, and a clean Mac-native experience.
+> **Xeusx+ is not another VPN subscription app.** It is a private control layer for your own VPN infrastructure: token-based setup, local secrets, verified servers, adaptive transport, coordinated fleet management with Orb, and a clean Mac-native experience.
 
 ---
 
 ## Own the path between your Mac and the internet
 
-Most VPN apps ask you to trust a company-operated network. Xeusx+ flips the model: you choose the server, you hold the token, and your Mac connects directly to infrastructure you control or personally trust.
+Most VPN apps ask you to trust a company-operated network. Xeusx+ flips the model: you choose the server, you hold the token, and your Mac connects directly to infrastructure you control, administer, or are expressly authorized to use.
 
 The result is a different kind of VPN experience: simple enough to connect in one click, powerful enough to deploy and manage your own servers, and designed to keep working when networks become filtered, hostile, or unreliable.
 
-- **Self-hosted by design** — connect to your own Xeusx server or one run by someone you trust. No Xeusx VPN subscription, no shared commercial exit pool, no developer relay.
-- **Server control with Orb** — provision and manage Xeusx servers over SSH: create users, choose connection methods, rotate tokens, and push updates across a fleet.
+- **Self-hosted by design** — connect to Xeusx infrastructure you own, administer, or are expressly authorized to use. No Xeusx VPN subscription, no server marketplace, no shared commercial exit pool, no developer relay.
+- **Cluster control with Orb** — provision Xeusx servers over SSH, coordinate them as one fleet, manage scoped access, and push updates from one place.
 - **No account surface** — no sign-up, login, user profile, advertising ID, developer account, or app-usage telemetry.
 - **Local-first secrets** — tokens unlock on your Mac; connection material is stored in macOS Keychain and protected by Touch ID or your Mac password.
 - **Resilient connectivity** — adaptive connection methods, health monitoring, and automatic failover help the app stay usable on difficult networks.
@@ -41,11 +42,9 @@ The result is a different kind of VPN experience: simple enough to connect in on
 
 ## Connect in minutes
 
-Use this path when you already have a Xeusx connection token.
-
-1. **Get a token.** Your Xeusx server gives you an encrypted connection token and passphrase, shared privately.
+1. **Use one token.** Import one encrypted Xeusx token and passphrase assigned to infrastructure you control or are expressly authorized to access.
 2. **Import locally.** Paste the token and passphrase. Xeusx+ unlocks and verifies the token on your Mac.
-3. **Connect.** The first connection may require macOS administrator approval to set up the secure network interface. After that, connecting is designed to be one click.
+3. **Connect.** The first connection may require macOS administrator approval to set up the secure network interface. After that, connecting is designed to be one click, and your connections stay synchronized.
 
 Xeusx+ lives in your **menu bar**. Click it to connect, switch servers, manage servers, open the main window, or check status.
 
@@ -55,14 +54,27 @@ Xeusx+ lives in your **menu bar**. Click it to connect, switch servers, manage s
 
 Most VPN apps stop at “connect.” Xeusx+ goes further: **Orb** is a built-in control panel for your own VPN servers, so you can deploy and operate infrastructure from the same Mac app you use to connect.
 
-Point Orb at a supported Ubuntu Linux server you own or are authorized to administer — a low-cost cloud VPS works well — and it guides the setup from first SSH connection to ready-to-share tokens.
+Start with a supported Ubuntu Linux server you own or are authorized to administer — a low-cost cloud VPS works well — and Orb guides the setup from first SSH connection to ready-to-use access tokens. Add more servers when you want more locations or resilience; Orb brings them into the same managed fleet.
 
 - **Guided provisioning** — install and configure a complete Xeusx VPN on a fresh server, then confirm it is healthy.
-- **User management** — add or remove people and give each one a ready-to-use encrypted token or QR code.
+- **Access management** — create separate access profiles, scope each profile to all or selected servers, and export one encrypted Xeusx token per profile.
 - **Connection methods on demand** — enable or disable available connection methods per server.
 - **Built-in hardening options** — configure ad and tracker blocking, connection multiplexing, automatic server recovery, and update behavior where available.
-- **Fleet operations** — manage multiple servers, push updates to one or all of them, and keep server state visible from one place.
+- **Decentralized fleet coordination** — join servers into one self-hosted fleet, distribute voting across independent failure domains, remove unavailable members safely, and control everything from Orb on your Mac.
 - **Maintenance scheduling** — keep operating-system packages and VPN components updated on a schedule you control.
+
+---
+
+### Decentralized across your servers. Controlled from your Mac.
+
+Adding another location should make your VPN stronger, not give you another system to babysit. Orb joins supported servers into a self-hosted cluster with authority replicated across the fleet. A safe odd set of servers reaches majority decisions, while Orb gives you one native control point — with no separate Xeusx controller, broker, or hosted database to depend on.
+
+- **Grow without weakening quorum** — every new server joins as a learner and fully catches up before it can vote. Orb uses the provider, infrastructure group, and region labels you define to spread voting responsibility across independent failure domains.
+- **Change the fleet without unsafe shortcuts** — voting-role changes and server removals use signed, resumable cluster operations. Even if a target server is unavailable, a healthy quorum — or protected fleet recovery after quorum loss — can authorize the change without requiring that server to respond over SSH.
+- **Keep access synchronized automatically** — profiles assigned to **All servers** extend to newly joined locations automatically, while explicitly scoped profiles stay exact. Signed catalog updates add or remove client connections on the next sync.
+- **Recover fleet control from one protected kit** — restore Orb administration on a replacement Mac using one encrypted `.xeusxfleet` backup plus a separate recovery code, while the committed servers continue running.
+
+Fleet recovery restores administrative control of a live fleet. It does not recreate destroyed servers or rebuild lost server-side consensus history.
 
 ### A careful management channel
 
@@ -103,7 +115,7 @@ Supported profile families may include:
 - **Trojan**, **VMess**, **Shadowsocks**
 - **ShadowTLS**, **WireGuard**
 
-Availability depends on the server token you import and the server configuration you use.
+Availability depends on your Xeusx connections and the configuration of each server.
 
 
 ---
@@ -127,8 +139,19 @@ Xeusx+ supports routing modes and presets designed for practical daily use:
 
 - full VPN or split routing;
 - optional ad, tracker, and known-malicious-site blocking where configured;
-- local-device reachability for printers, AirPlay, NAS, and LAN devices; and
-- downloadable routing rule sets where enabled by you.
+- local-device reachability for printers, AirPlay, NAS, and LAN devices;
+- downloadable routing rule sets where enabled by you; and
+- cross-device Traffic Rules sharing through `.xeusx` files, with a preview before import and seamless import together with connection tokens from the same `.xeusx` file or the clipboard.
+
+---
+
+## Access control that scales with your infrastructure
+
+As your server fleet grows, access should remain simple to manage. Orb gives you one place to define which authorized users can connect and which Orb-managed servers are available to them—without creating a new token every time your infrastructure changes.
+
+- **One access profile. One encrypted token** — Create an access profile for each authorized user, then grant or revoke access across the servers you manage. Each profile is represented by one encrypted Xeusx token, while its approved connections can stay synchronized across that user’s enrolled devices.
+- **Fleet-wide or server-specific access.** — Allow an access profile to use every current and future Orb-managed server, or limit it to an explicit server list. With server-specific access, newly added servers remain unavailable until you approve them.
+- **Device-level control.** — View and revoke devices enrolled under an access profile, and set a maximum number of permitted devices. Each enrolled device receives its own revocable connection identity, helping contain exposure if a token is copied or compromised.
 
 ---
 
@@ -136,7 +159,7 @@ Xeusx+ supports routing modes and presets designed for practical daily use:
 
 Download only from official Xeusx distribution locations. Sharing the official link is welcome; mirroring, re-uploading, repackaging, or redistributing the app binary is not permitted by the **[License](LICENSE.md)**.
 
-- **Download Xeusx+.dmg:** use the official GitHub release or official repository download link published by Xeusx Labs.
+- **Download Xeusx+.dmg:** use the [latest official GitHub Release](https://github.com/xeusxlabs/xeusx-desktop-mac/releases/latest).
 - **Requires:** macOS 14 Sonoma or later.
 
 The current version and checksum are listed in **[CHANGELOG.md](CHANGELOG.md)**.
@@ -172,11 +195,11 @@ Xeusx+ can check for updates automatically and on demand through the app. Update
 ## What you need
 
 - macOS 14 or later.
-- **To connect:** a connection token and passphrase from your own Xeusx server or from a server operator you trust.
-- **To run your own server with Orb:** a supported Ubuntu Linux server you own or are authorized to administer, with SSH access.
-- Responsibility for checking whether using a VPN — and operating a server — is lawful where you and your servers are located.
+- **To connect:** one valid encrypted Xeusx token and passphrase assigned to infrastructure you control or are expressly authorized to access.
+- **To run your own fleet with Orb:** one or more supported Ubuntu Linux servers you own or are authorized to administer, with SSH access.
+- Responsibility for checking whether using a VPN — and administering a server — is lawful where you use Xeusx and where the selected servers are located.
 
-Xeusx+ includes both the **Connect** client and the **Orb** server manager. You still own and control your servers; the developer never operates them for you.
+Xeusx+ includes both the **Connect** client and the **Orb** server manager. You choose the servers you use; the developer does not supply, operate, or broker access to them.
 
 ---
 
@@ -195,36 +218,6 @@ Xeusx is **free to download and use as an official unmodified build**, but it is
 - **[Privacy Policy](PRIVACY.md)** — how the app handles information.
 
 Third-party and open-source components included with Xeusx remain governed by their own notices.
-
----
-
-## Support Xeusx
-
-### Help keep Xeusx independent
-
-**Xeusx+ is free to download and use, with no feature paywalls or required account.** If Xeusx helps protect your connections, manage your infrastructure, or simplify remote access, you can support its continued independent development with a donation.
-
-Your support helps fund:
-
-- **Development** — ongoing improvements and new features.
-- **Security** — maintenance and hardening.
-- **Compatibility** — testing across macOS and server environments.
-- **Protocol upkeep** — protocol and dependency updates.
-- **Long-term maintenance** — reliable releases and continued project care.
-
-> [!NOTE]
-> Donations are entirely optional. They do not unlock features or provide priority support.
-
-- **Bitcoin (BTC)** — bc1q89fc7rqz0nex5vredpv6vr6dp8n69xguv6jh45
-- **Ethereum (ETH)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
-- **Solana (SOL)** — 4QcpqpyFr2DYrKctGQ6hTtLR3LUup4CVdyohviKgRJV7
-- **ERC-20 (USDT)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
-- **ERC-20 (USDC)** — 0x2407f4839650fD9788b92e957C064A02D022FCfa
-
-> [!IMPORTANT]
-> Cryptocurrency transfers are irreversible. Before sending, confirm that you are viewing the official repository at `github.com/xeusxlabs/xeusx-desktop-mac`. Use only the exact network listed beside the published address, verify the address carefully.
-
-**Thank you for helping keep Xeusx independent, maintained, and available to everyone.**
 
 ---
 
