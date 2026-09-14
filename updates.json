@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "142",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.3+142/Xeusx+.dmg",
+    "build": "143",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.4+143/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "**Breaking change:** Legacy users continue to work after the update but cannot be migrated automatically to the new decentralized cluster-wide server and user management model. To migrate, create a new server cluster, recreate each legacy user as an access profile, and share a new Xeusx token.\n\n**New:**\n\n- **One access profile. One encrypted token.** Create an access profile for each authorized user, then grant or revoke access across the servers in your cluster. Each profile uses a single encrypted Xeusx token, while approved connections stay synchronized across the user\u2019s enrolled devices.\n- **Fleet-wide or server-specific access.** Grant an access profile access to every current and future Orb-managed server in the cluster, or restrict it to an explicit server list. With server-specific access, newly added servers remain unavailable until you explicitly grant access.\n- **Device-level control.** View and revoke devices enrolled under an access profile, and set a maximum device limit. Each enrolled device receives its own revocable connection identity, helping limit exposure if a token is copied or compromised.\n- **Traffic Rules Sharing.** Export Traffic Rules to `.xeusx` files and open them on any supported Xeusx device to preview the rules before importing. If the file also contains a Xeusx token, the connection and its Traffic Rules are imported together in one step.",
-    "sha256": "045eb793abfc426e8d70f3114264a9c94a25c239ee8b202da34c3f9e6378a442",
-    "version": "26.1.3"
+    "notes": "- Fixed connection failures on IPv6-enabled networks when large country-based Traffic Rules are configured.\n- Improved connection, protocol switching, and disconnect responsiveness by batching route setup and cleanup.\n- The app now waits for route setup to finish before reporting a connection, preventing unnecessary automatic failover during startup.",
+    "sha256": "0e27127cbdfe63b08d72461fc72e7900cd8b82054a5d664cf82f90639b0b41c7",
+    "version": "26.1.4"
   }
 }

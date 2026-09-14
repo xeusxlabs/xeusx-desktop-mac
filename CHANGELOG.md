@@ -5,6 +5,16 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.1.4+143 — 2026-09-14
+
+- Fixed connection failures on IPv6-enabled networks when large country-based Traffic Rules are configured.
+- Improved connection, protocol switching, and disconnect responsiveness by batching route setup and cleanup.
+- The app now waits for route setup to finish before reporting a connection, preventing unnecessary automatic failover during startup.
+
+SHA-256 (`Xeusx+.dmg`): `0e27127cbdfe63b08d72461fc72e7900cd8b82054a5d664cf82f90639b0b41c7`
+
+Orb server agent: `26.1.4+140`
+
 ## Xeusx+ 26.1.3+142 — 2026-09-02
 
 **Breaking change:** Legacy users continue to work after the update but cannot be migrated automatically to the new decentralized cluster-wide server and user management model. To migrate, create a new server cluster, recreate each legacy user as an access profile, and share a new Xeusx token.
