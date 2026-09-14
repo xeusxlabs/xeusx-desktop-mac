@@ -1,0 +1,64 @@
+name: Publish signed desktop release
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_release_id:
+        description: ID of the reviewed draft containing all four signed assets
+        required: true
+        type: string
+      tag:
+        description: Exact existing release tag
+        required: true
+        type: string
+      commit:
+        description: Full commit SHA already referenced by the tag
+        required: true
+        type: string
+      latest:
+        description: Mark this release as Latest
+        required: true
+        default: true
+        type: boolean
+      replace_published:
+        description: Replace an existing published release with identical signed assets
+        required: true
+        default: false
+        type: boolean
+
+permissions: {}
+
+concurrency:
+  group: desktop-release-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_REPOSITORY: ${{ github.repository }}
+      SOURCE_RELEASE_ID: ${{ inputs.source_release_id }}
+      RELEASE_TAG: ${{ inputs.tag }}
+      RELEASE_COMMIT: ${{ inputs.commit }}
+      RELEASE_LATEST: ${{ inputs.latest }}
+      REPLACE_PUBLISHED: ${{ inputs.replace_published }}
+    steps:
+      - name: Verify assets and publish as the release bot
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "repos/${RELEASE_REPOSITORY}/contents/.github/scripts/publish_release.py?ref=${GITHUB_SHA}" \
+            -H 'Accept: application/vnd.github.raw+json' > "${RUNNER_TEMP}/publish_release.py"
+          gh api "repos/${RELEASE_REPOSITORY}/contents/.github/release-public-key?ref=${GITHUB_SHA}" \
+            -H 'Accept: application/vnd.github.raw+json' > "${RUNNER_TEMP}/release-public-key"
+          python3 "${RUNNER_TEMP}/publish_release.py" \
+            --repository "$RELEASE_REPOSITORY" \
+            --source-release-id "$SOURCE_RELEASE_ID" \
+            --tag "$RELEASE_TAG" --commit "$RELEASE_COMMIT" \
+            --latest "$RELEASE_LATEST" --replace-published "$REPLACE_PUBLISHED" \
+            --public-key "${RUNNER_TEMP}/release-public-key"
