@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "143",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.4+143/Xeusx+.dmg",
+    "build": "145",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.4+145/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Fixed connection failures on IPv6-enabled networks when large country-based Traffic Rules are configured.\n- Improved connection, protocol switching, and disconnect responsiveness by batching route setup and cleanup.\n- The app now waits for route setup to finish before reporting a connection, preventing unnecessary automatic failover during startup.",
-    "sha256": "0e27127cbdfe63b08d72461fc72e7900cd8b82054a5d664cf82f90639b0b41c7",
+    "notes": "- Improved TUIC provisioning and surfaced firewall setup failures.\n- Improved XHTTP H2 compatibility for CDN-fronted servers.\n- Preserved native macOS styling and strengthened release-build validation.",
+    "sha256": "deee8fa036d27a5109de1c37b9e6dc053fafb8ac438df329444a8be61c704636",
     "version": "26.1.4"
   }
 }

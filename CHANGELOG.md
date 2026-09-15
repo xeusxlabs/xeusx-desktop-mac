@@ -5,6 +5,16 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.1.4+145 — 2026-09-15
+
+- Improved TUIC provisioning and surfaced firewall setup failures.
+- Improved XHTTP H2 compatibility for CDN-fronted servers.
+- Preserved native macOS styling and strengthened release-build validation.
+
+SHA-256 (`Xeusx+.dmg`): `deee8fa036d27a5109de1c37b9e6dc053fafb8ac438df329444a8be61c704636`
+
+Orb server agent: `26.1.4+142`
+
 ## Xeusx+ 26.1.4+143 — 2026-09-14
 
 - Fixed connection failures on IPv6-enabled networks when large country-based Traffic Rules are configured.
