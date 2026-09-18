@@ -138,10 +138,26 @@ Entry server      Relay server       Relay server   Exit server
 Xeusx+ supports routing modes and presets designed for practical daily use:
 
 - full VPN or split routing;
-- optional ad, tracker, and known-malicious-site blocking where configured;
+- optional presets for blocking known ad and tracker domains and known botnet command-and-control IPs, independent of your DNS provider;
 - local-device reachability for printers, AirPlay, NAS, and LAN devices;
 - downloadable routing rule sets where enabled by you; and
 - cross-device Traffic Rules sharing through `.xeusx` files, with a preview before import and seamless import together with connection tokens from the same `.xeusx` file or the clipboard.
+
+---
+
+## Your DNS. Your rules.
+
+Choose your resolver. Set your filtering. Keep control of your DNS—with encrypted resolution built into Xeusx+ and encrypted forwarding on Orb-managed servers.
+
+- **Your resolver. Your level of filtering.** — Choose Cloudflare, Quad9, AdGuard DNS, or a custom resolver. Depending on the provider, options range from unfiltered resolution to malicious-domain blocking, ad and tracker blocking, and family filtering.
+- **Encrypted by default. No silent downgrade.** — Cloudflare DNS over HTTPS (DoH) is enabled out of the box. Both DoH and DNS over TLS (DoT) validate the resolver’s TLS certificate, with no silent fallback to plaintext DNS.
+- **DNS that follows your VPN.** — While VPN protection is active, public system DNS managed by Xeusx uses your selected VPN exit—in both full-tunnel and split-routing modes. Turn Traffic Rules off, and Cloudflare DoH remains active while your saved DNS preferences are preserved.
+- **Fewer repeat requests. Less connection overhead.** — Connection reuse, bounded caching, and shared lookups reduce duplicate DNS requests and repeated connection setup.
+- **Server-side filtering. Encrypted forwarding.** — Orb’s managed resolver forwards DNS over certificate-verified TLS. Enabled server filters refresh automatically from validated lists and apply to domains the server resolves or can inspect.
+
+Configure your resolver and filtering in **Traffic Rules → DNS**.
+
+**Advanced UDP/TCP DNS:** Requests are protected inside the VPN tunnel, but travel unencrypted between the exit server and the resolver. Choose DoH or DoT to encrypt that part of the path as well.
 
 ---
 
