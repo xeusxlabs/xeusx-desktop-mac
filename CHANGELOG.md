@@ -5,6 +5,32 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.2.0+6 — 2026-09-18
+
+### New
+
+- **Choose your DNS resolver** — Select Cloudflare, Quad9, AdGuard DNS, or a custom resolver in Traffic Rules, with clear descriptions of each provider and its filtering options.
+- **Encrypted DNS by default** — DNS over HTTPS is now the default, with certificate-verified DNS over TLS and advanced UDP/TCP options available when needed.
+- **Encrypted DNS forwarding on managed servers** — Orb-managed servers now use encrypted upstream DNS while preserving existing filtering preferences.
+
+### Improved
+
+- **DNS stays inside the VPN path** — Managed public DNS traffic follows the selected VPN route in both routing modes, including when Traffic Rules are disabled.
+- **Faster DNS resolution** — Bounded connection reuse, caching, and request coalescing reduce unnecessary DNS work and improve responsiveness.
+- **Automatic filter updates** — Blocking lists now refresh on a dedicated verified schedule without relying on cron.
+
+### Fixed
+
+- Resolved DNS transport concurrency issues that could affect reconnects and clean shutdown.
+
+
+
+Open **Orb** in Xeusx+ and select **Update all** to complete server maintenance. Existing profiles and credentials are preserved — **no token reimport is required**.
+
+SHA-256 (`Xeusx+.dmg`): `6464fdca9b8decff48e23df8a373f4d270eaeca1a7459dbfe43c6cda09905a49`
+
+Orb server agent: `26.2.0+5`
+
 ## Xeusx+ 26.1.4+145 — 2026-09-15
 
 - Improved TUIC provisioning and surfaced firewall setup failures.

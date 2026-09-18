@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "145",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.1.4+145/Xeusx+.dmg",
+    "build": "6",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.2.0+6/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Improved TUIC provisioning and surfaced firewall setup failures.\n- Improved XHTTP H2 compatibility for CDN-fronted servers.\n- Preserved native macOS styling and strengthened release-build validation.",
-    "sha256": "deee8fa036d27a5109de1c37b9e6dc053fafb8ac438df329444a8be61c704636",
-    "version": "26.1.4"
+    "notes": "### New\n\n- **Choose your DNS resolver** \u2014 Select Cloudflare, Quad9, AdGuard DNS, or a custom resolver in Traffic Rules, with clear descriptions of each provider and its filtering options.\n- **Encrypted DNS by default** \u2014 DNS over HTTPS is now the default, with certificate-verified DNS over TLS and advanced UDP/TCP options available when needed.\n- **Encrypted DNS forwarding on managed servers** \u2014 Orb-managed servers now use encrypted upstream DNS while preserving existing filtering preferences.\n\n### Improved\n\n- **DNS stays inside the VPN path** \u2014 Managed public DNS traffic follows the selected VPN route in both routing modes, including when Traffic Rules are disabled.\n- **Faster DNS resolution** \u2014 Bounded connection reuse, caching, and request coalescing reduce unnecessary DNS work and improve responsiveness.\n- **Automatic filter updates** \u2014 Blocking lists now refresh on a dedicated verified schedule without relying on cron.\n\n### Fixed\n\n- Resolved DNS transport concurrency issues that could affect reconnects and clean shutdown.\n\n\n\nOpen **Orb** in Xeusx+ and select **Update all** to complete server maintenance. Existing profiles and credentials are preserved \u2014 **no token reimport is required**.",
+    "sha256": "6464fdca9b8decff48e23df8a373f4d270eaeca1a7459dbfe43c6cda09905a49",
+    "version": "26.2.0"
   }
 }
