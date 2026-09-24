@@ -1,8 +1,8 @@
 # Xeusx Privacy Policy
 
-**Last updated: July 17, 2026**
+**Last updated: September 24, 2026**
 
-This Privacy Policy explains how **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**), handles information. Xeusx is a self-hosted VPN client and server manager designed so connection material and server-administration material stay on your Mac and under your control.
+This Privacy Policy explains how **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**), handles information. Xeusx is a self-hosted VPN client and server manager that stores local connection and server-administration material under your control. Optional residential-proxy setup also delivers provider credentials to the servers you select, as described below.
 
 For this Policy, an **"Authorized Server"** is a compatible server that you own, administer, or are expressly authorized to use. The term describes your authority to use the server; it does not mean Xeusx Labs has reviewed, approved, or certified it. Xeusx does not provide a server directory, access marketplace, brokerage service, or developer-operated VPN network.
 
@@ -14,6 +14,7 @@ For this Policy, an **"Authorized Server"** is a compatible server that you own,
 - **No tracking or telemetry.** The app does not include third-party advertising, analytics, behavioral tracking, usage telemetry, crash reporting to the developer, or a license server that reports app use to the developer.
 - **Local secrets.** Connection material is stored locally in macOS Keychain. The import passphrase is used transiently in memory and is not stored by the app.
 - **Orb server management stays local too.** If you use Orb to run your own servers, Xeusx creates or uses server-management material on your Mac, keeps it in your local Keychain vault where applicable, and connects directly to your servers. The developer runs no admin backend and receives none of this.
+- **Optional residential providers are independent.** If your operator enables residential routing, the configured provider receives the authentication and connection information needed to carry that traffic. Xeusx Labs does not supply the provider account or receive that information.
 - **Independent infrastructure may process ordinary request data.** GitHub may receive your IP address when you download the app or when the app checks for updates, and your hosting provider may process server-related data. If an Authorized Server is administered by another party, that party may process VPN connection and synchronization-request metadata under its own policies.
 
 ## 1. Information the developer does not collect through the app
@@ -32,6 +33,8 @@ Xeusx also stores ordinary app preferences locally, such as selected options and
 
 If you use **Orb**, Xeusx also stores server-management material locally on your Mac. This may include the list of servers you manage, server labels, SSH host identity information, setup state, update settings, access-management metadata, and a scoped administrative SSH key used to manage Xeusx operations on your servers. The key is generated or enrolled on your Mac and is used to connect from your Mac to servers you manage; it is not sent to the developer.
 
+When you configure a residential provider in Orb, its credentials are saved in the protected local vault and delivered to the selected managed servers for provider authentication. Those provider credentials are not included in users' exported connection profiles. Provider settings, sticky-port assignments, per-user allowances and usage state are also retained as needed to operate the feature.
+
 Any setup password, SSH credential, or server alias you provide during first-time setup is used for the setup flow and key enrollment. Xeusx is designed not to retain setup passwords after enrollment where the supported setup flow allows password removal or replacement with a scoped key. You can rotate or revoke management keys and remove managed servers when supported by the app and your server configuration.
 
 Detailed logging, if available and enabled by you, is local to your Mac. Logs are not sent to the developer by the app. Logs are intended not to include your import passphrase, full connection strings, or private keys, but you should review any log before sharing it with anyone.
@@ -48,6 +51,7 @@ Apart from carrying your VPN traffic, the app may make the following outbound co
 4. **Optional routing rule-set updates.** If you enable downloadable rule sets, blocklists, or geo data, Xeusx may fetch those files from the sources you configure or approve, on the schedule you choose.
 5. **Orb server administration.** If you manage servers with Orb, the app opens SSH connections from your Mac directly to those servers. These connections go to servers you control or are authorized to manage, not to the developer, and are intended for defined Xeusx management operations rather than general-purpose server administration.
 6. **Hosting-provider or operating-system traffic.** Your server, hosting provider, operating system, package repositories, and security-update sources may create their own logs or network requests outside the app's control.
+7. **Optional residential proxies.** Orb uses the configured provider's HTTPS management API to manage provider settings, sessions and usage. Selected residential traffic travels through your Authorized Server to that provider. These requests use the operator-supplied provider account, not a Xeusx Labs account.
 
 Xeusx does not phone home to a developer-operated app-usage backend.
 
@@ -70,6 +74,12 @@ There is no periodic server-synchronization timer or continuous background polli
 The connected Authorized Server receives the server-issued identifiers and credentials needed to authenticate synchronization. If that server is administered by another party, that party may process the request time and ordinary HTTPS and VPN-connection metadata. Xeusx Labs does not receive this information.
 
 This synchronization is separate from official app-update checks, optional routing-data downloads on a schedule you choose, and Orb server-maintenance schedules.
+
+### 3.2 Residential proxy routing
+
+Residential routing is optional and requires an independently supplied provider account and operator-enabled access. The provider may process its account credentials, requested locations, session identifiers, destination metadata, connection times and traffic volume. Your managed servers maintain the authorization and usage state needed to enforce residential allowances. These are operational records for your configured infrastructure, not developer telemetry.
+
+The current Geonode adapter uses an unencrypted HTTP proxy connection from the VPN server to the provider. Proxy credentials and destination metadata are visible on that hop. Application HTTPS and the selected encrypted DNS retain their TLS protection; unsupported traffic in the residential scope stays blocked. The provider's processing is independent from Xeusx Labs and is subject to its own terms and privacy practices.
 
 ## 4. Authorized servers and hosting infrastructure
 

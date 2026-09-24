@@ -2,7 +2,7 @@
 
 **Self-hosted VPN control for macOS — connect, deploy, and manage your own private VPN infrastructure from one native Mac app.**
 
-Xeusx+ is built for people who want their VPN to be **theirs**. No subscription VPN cloud. No account. No tracking SDK. No company-operated relay in the middle. Import one encrypted Xeusx token for infrastructure you control or are expressly authorized to access, unlock it locally on your Mac, and keep the connections assigned to that token synchronized.
+Xeusx+ is built for people who want their VPN to be **theirs**. No subscription VPN cloud. No Xeusx account. No tracking SDK. No company-operated relay in the middle. Import one encrypted Xeusx token for infrastructure you control or are expressly authorized to access, unlock it locally on your Mac, and keep the connections assigned to that token synchronized.
 
 Xeusx+ also includes **Orb**, a built-in server manager for creating and operating your own Xeusx VPN infrastructure. Point Orb at supported Ubuntu Linux servers you control or are authorized to administer, provision a complete self-hosted VPN fleet, coordinate those servers as one resilient cluster, create scoped access profiles, export one encrypted Xeusx token per profile, and push server updates — all from the Mac app, over SSH, without a Xeusx admin cloud.
 
@@ -158,6 +158,24 @@ Choose your resolver. Set your filtering. Keep control of your DNS—with encryp
 Configure your resolver and filtering in **Traffic Rules → DNS**.
 
 **Advanced UDP/TCP DNS:** Requests are protected inside the VPN tunnel, but travel unencrypted between the exit server and the resolver. Choose DoH or DoT to encrypt that part of the path as well.
+
+---
+
+## Residential proxy routing
+
+Add residential exits to your self-hosted VPN — with per-user access controls, data allowances, and control over which traffic uses them.
+
+Configure a separately supplied **Geonode** account through Orb, assign sticky-session ports on your managed servers, and enable residential access for selected users. In **Connect → Residential Proxy**, authorized users can choose a configured provider, entry gateway, and residential exit country, or request a new session when needed. **Xeusx Labs provides the integration, not the proxy account or residential bandwidth.**
+
+- **Selected sites** — Route selected domains through the residential exit. Domain matching requires Xeusx DNS.
+- **All VPN traffic** — Apply residential routing to traffic captured by Xeusx, including applications that use their own encrypted DNS. Only supported traffic is forwarded.
+
+Physical Direct exclusions — traffic kept outside the VPN — and VPN-management traffic retain their existing routes. Changing the routing selection reconnects the VPN on this device.
+
+This release supports **HTTPS and encrypted DNS over IPv4** through the residential exit. UDP, IPv6, and other unsupported traffic within the selected scope are blocked. If the residential exit becomes unavailable, traffic in that scope **stays blocked rather than falling back to another route**.
+
+> [!WARNING]
+> **The server-to-provider connection is not encrypted.** The current Geonode integration uses a plain HTTP proxy connection from your VPN server to the provider. Proxy credentials and destination metadata are exposed to anyone able to monitor that connection. Application HTTPS and encrypted DNS retain their TLS protection, but this does not protect the proxy credentials or destination metadata on that hop. Enable residential routing only if this exposure is acceptable for your security requirements.
 
 ---
 

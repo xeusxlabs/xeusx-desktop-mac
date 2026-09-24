@@ -5,6 +5,36 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.0+39 — 2026-09-24
+
+> [!IMPORTANT]
+> After updating Xeusx+, open **Orb** and select **Update all** to install the bundled server improvements.
+
+### New
+
+- **Residential proxy routing** — Configure Geonode residential routing in Orb, including entry gateways, exit countries, and per-user data allowances. Authorized users can choose their residential exit in **Connect → Residential Proxy**.
+- **Sticky-session controls** — Keep the same residential session or request a new one, with clearer port availability, usage information, and renewal controls.
+- **Connection security details** — Detailed Logs now show observed transport encryption and authentication results, with unavailable information clearly marked.
+
+### Improved
+
+- More consistent native sheets, settings controls, and clickable connection details.
+- More reliable fleet updates, removal of unavailable servers, and user access synchronization.
+
+### Fixed
+
+- Restored synchronization of profiles and residential proxy options over TUIC and Hysteria2 connections.
+- Fixed DNS and residential session recovery issues that could require a manual VPN reconnect.
+
+**Residential routing requirements:** A separately configured Geonode account and access enabled in Orb are required. This release supports **HTTPS and encrypted DNS over IPv4** through residential exits. UDP, IPv6, and other unsupported traffic within the selected scope remain blocked. Traffic in that scope also stays blocked if the residential exit becomes unavailable.
+
+> [!WARNING]
+> **The server-to-provider connection is not encrypted.** The current Geonode integration uses a plain HTTP proxy connection from your VPN server to the provider. Proxy credentials and destination metadata are exposed to anyone able to monitor that connection. Application HTTPS and encrypted DNS retain their TLS protection, but this does not protect the proxy credentials or destination metadata on that hop.
+
+SHA-256 (`Xeusx+.dmg`): `7ec0ac44241b80ba360c7f6e2a0e884dc93491b7acd87850ba4dba0b9ab50874`
+
+Orb server agent: `26.3.0+25`
+
 ## Xeusx+ 26.2.0+6 — 2026-09-18
 
 ### New
