@@ -174,8 +174,10 @@ Physical Direct exclusions — traffic kept outside the VPN — and VPN-manageme
 
 This release supports **HTTPS and encrypted DNS over IPv4** through the residential exit. UDP, IPv6, and other unsupported traffic within the selected scope are blocked. If the residential exit becomes unavailable, traffic in that scope **stays blocked rather than falling back to another route**.
 
+**HTTPS website content stays encrypted between your device and the website.** With the website's certificate correctly verified, Geonode and network observers cannot read website login credentials, cookies, page contents, or transaction details carried over HTTPS. Encrypted DNS retains its separate TLS protection to the selected resolver.
+
 > [!WARNING]
-> **The server-to-provider connection is not encrypted.** The current Geonode integration uses a plain HTTP proxy connection from your VPN server to the provider. Proxy credentials and destination metadata are exposed to anyone able to monitor that connection. Application HTTPS and encrypted DNS retain their TLS protection, but this does not protect the proxy credentials or destination metadata on that hop. Enable residential routing only if this exposure is acceptable for your security requirements.
+> **Geonode proxy credentials and connection metadata are exposed.** The current integration uses a plain HTTP CONNECT connection from your VPN server to Geonode, without TLS to the proxy itself. Anyone able to monitor that connection can read the **Geonode proxy username and password** and destination IP/port; destination hostnames may also be visible. Traffic timing and volume remain observable. Enable residential routing only if this exposure is acceptable for your security requirements.
 
 ---
 

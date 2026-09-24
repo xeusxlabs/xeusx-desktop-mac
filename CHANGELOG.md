@@ -28,8 +28,10 @@ updater checks the same checksum and a cryptographic signature before installing
 
 **Residential routing requirements:** A separately configured Geonode account and access enabled in Orb are required. This release supports **HTTPS and encrypted DNS over IPv4** through residential exits. UDP, IPv6, and other unsupported traffic within the selected scope remain blocked. Traffic in that scope also stays blocked if the residential exit becomes unavailable.
 
+**HTTPS website content stays encrypted between your device and the website.** With the website's certificate correctly verified, Geonode and network observers cannot read website login credentials, cookies, page contents, or transaction details carried over HTTPS. Encrypted DNS retains its separate TLS protection to the selected resolver.
+
 > [!WARNING]
-> **The server-to-provider connection is not encrypted.** The current Geonode integration uses a plain HTTP proxy connection from your VPN server to the provider. Proxy credentials and destination metadata are exposed to anyone able to monitor that connection. Application HTTPS and encrypted DNS retain their TLS protection, but this does not protect the proxy credentials or destination metadata on that hop.
+> **Geonode proxy credentials and connection metadata are exposed.** The current integration uses a plain HTTP CONNECT connection from your VPN server to Geonode, without TLS to the proxy itself. Anyone able to monitor that connection can read the **Geonode proxy username and password** and destination IP/port; destination hostnames may also be visible. Traffic timing and volume remain observable.
 
 SHA-256 (`Xeusx+.dmg`): `7ec0ac44241b80ba360c7f6e2a0e884dc93491b7acd87850ba4dba0b9ab50874`
 
