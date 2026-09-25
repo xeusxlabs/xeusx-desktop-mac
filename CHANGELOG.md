@@ -5,6 +5,17 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.1+49 — 2026-09-25
+
+### Design improvements
+
+- Refined native Liquid Glass styling for macOS 27, with a more consistent appearance across Settings, Traffic Rules, and Orb.
+- Aligned Residential Proxy dropdown colors with Settings for a cohesive look in Light and Dark modes.
+
+SHA-256 (`Xeusx+.dmg`): `6a08b9d10b0dddd1441a3cd4f8b28771983af19b180a0c930b23bdac880b680e`
+
+Orb server agent: `26.3.0+32`
+
 ## Xeusx+ 26.3.0+48 — 2026-09-25
 
 > [!IMPORTANT]
