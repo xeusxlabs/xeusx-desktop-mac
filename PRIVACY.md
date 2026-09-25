@@ -1,6 +1,6 @@
 # Xeusx Privacy Policy
 
-**Last updated: September 24, 2026**
+**Last updated: September 25, 2026**
 
 This Privacy Policy explains how **Xeusx for macOS**, including the public **Xeusx+** build (**"Xeusx"** or the **"app"**), handles information. Xeusx is a self-hosted VPN client and server manager that stores local connection and server-administration material under your control. Optional residential-proxy setup also delivers provider credentials to the servers you select, as described below.
 
@@ -79,7 +79,11 @@ This synchronization is separate from official app-update checks, optional routi
 
 Residential routing is optional and requires an independently supplied provider account and operator-enabled access. The provider may process its account credentials, requested locations, session identifiers, destination metadata, connection times and traffic volume. Your managed servers maintain the authorization and usage state needed to enforce residential allowances. These are operational records for your configured infrastructure, not developer telemetry.
 
-The current Geonode adapter uses an unencrypted HTTP proxy connection from the VPN server to the provider. Proxy credentials and destination metadata are visible on that hop. Application HTTPS and the selected encrypted DNS retain their TLS protection; unsupported traffic in the residential scope stays blocked. The provider's processing is independent from Xeusx Labs and is subject to its own terms and privacy practices.
+The Geonode integration uses an unencrypted HTTP CONNECT connection from the VPN server to the provider, exposing proxy credentials and destination metadata to observers on that hop. Decodo and Bright Data use certificate-verified HTTPS connections to their proxy gateways, protecting those credentials and metadata from observers between the VPN server and provider. The selected provider itself can still process this information.
+
+Application HTTPS remains encrypted between your device and the website when its certificate is correctly verified, including website login credentials, cookies, and page contents. Encrypted DNS retains its separate TLS protection to the selected resolver. Xeusx does not install a provider root certificate or intercept website TLS. Unsupported traffic and traffic whose selected residential exit is unavailable remain blocked within that scope.
+
+Optional Decodo and Bright Data management API keys stay in Orb's protected local vault and are used from the Mac for read-only provider statistics. They are not sent to managed servers or Connect clients. Those statistics can include other applications sharing the provider account and are displayed separately from Xeusx-enforced usage. Provider processing is independent from Xeusx Labs and is subject to the provider's own terms and privacy practices. See [Residential proxy routing](README.md#residential-proxy-routing) for the supported transports and provider-specific behavior.
 
 ## 4. Authorized servers and hosting infrastructure
 

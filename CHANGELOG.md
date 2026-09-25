@@ -5,6 +5,34 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.0+48 — 2026-09-25
+
+> [!IMPORTANT]
+> After updating Xeusx+, open **Orb** and select **Update all** before configuring the new providers. Update the iOS client too, then synchronize each authorized user's connections.
+
+### New
+
+- **Decodo residential routing** — Use a certificate-verified HTTPS gateway, country targeting, and named sticky sessions without a configured port inventory. Authorized macOS and iOS users can select Decodo in **Connect → Residential Proxy** after server qualification and synchronization.
+- **Bright Data residential routing** — Adds a certificate-verified HTTPS gateway and named sessions with fixed-peer and blocked-fallback controls. Activation requires the account and zone to pass every connection, forwarding, and encrypted-DNS check.
+- **Excluded provider ports** — Reserve individual ports or ranges for other applications across an account's gateways. Protection covers allocation, setup checks, routing, rotation, and cleanup; conflicting active assignments must be retired first.
+
+### Fixed
+
+- Recover from an interrupted residential status read by reconnecting once to the same verified server, with clearer SSH and provider-permission diagnostics.
+- Preserved valid residential sessions across routine cluster authorization updates while continuing to enforce revocation and allowance changes.
+
+**Residential routing requirements:** Supply your own provider account and enable user access in Orb. The current integration forwards **HTTPS and supported encrypted DNS over IPv4**. Geonode supports DoH and DoT; Decodo and Bright Data support DoH. Unsupported traffic within the selected scope stays blocked, and an unavailable exit never causes that scope to fall back to another route.
+
+**Bright Data qualification:** Some account or zone policies permit test websites but block literal-IP forwarding or DoH. Orb withholds activation until those required checks pass on each assigned server. Provider statistics do not override qualification, and successful qualification does not guarantee access to every website.
+
+**HTTPS website content stays encrypted between your device and the website**, including website login credentials, cookies, and page contents, when the website's certificate is correctly verified. Decodo and Bright Data also encrypt the server-to-provider connection; the provider itself still sees connection metadata.
+
+See [Residential proxy routing](https://github.com/xeusxlabs/xeusx-desktop-mac#residential-proxy-routing) for provider-specific setup, session behavior, accounting, and restrictions.
+
+SHA-256 (`Xeusx+.dmg`): `0b762a22d2092c1441b183d29f5f4814d9dfb402e039432ec5bb88ec21db08f5`
+
+Orb server agent: `26.3.0+32`
+
 ## Xeusx+ 26.3.0+39 — 2026-09-24
 
 > [!IMPORTANT]

@@ -30,7 +30,7 @@ Most VPN apps ask you to trust a company-operated network. Xeusx+ flips the mode
 
 The result is a different kind of VPN experience: simple enough to connect in one click, powerful enough to deploy and manage your own servers, and designed to keep working when networks become filtered, hostile, or unreliable.
 
-- **Self-hosted by design** — connect to Xeusx infrastructure you own, administer, or are expressly authorized to use. No Xeusx VPN subscription, no server marketplace, no shared commercial exit pool, no developer relay.
+- **Self-hosted by design** — connect to Xeusx infrastructure you own, administer, or are expressly authorized to use. No Xeusx VPN subscription, server marketplace, or developer-operated exit pool or relay. Optional residential exits use a provider account you supply.
 - **Cluster control with Orb** — provision Xeusx servers over SSH, coordinate them as one fleet, manage scoped access, and push updates from one place.
 - **No account surface** — no sign-up, login, user profile, advertising ID, developer account, or app-usage telemetry.
 - **Local-first secrets** — tokens unlock on your Mac; connection material is stored in macOS Keychain and protected by Touch ID or your Mac password.
@@ -165,19 +165,58 @@ Configure your resolver and filtering in **Traffic Rules → DNS**.
 
 Add residential exits to your self-hosted VPN — with per-user access controls, data allowances, and control over which traffic uses them.
 
-Configure a separately supplied **Geonode** account through Orb, assign sticky-session ports on your managed servers, and enable residential access for selected users. In **Connect → Residential Proxy**, authorized users can choose a configured provider, entry gateway, and residential exit country, or request a new session when needed. **Xeusx Labs provides the integration, not the proxy account or residential bandwidth.**
+Configure your provider account through **Orb → Proxies**, assign managed servers, and enable residential access with per-user data allowances. After synchronization, authorized macOS and iOS users can choose a qualified provider and exit country in **Connect → Residential Proxy**, select an entry gateway where supported, or request **New Session**. **Xeusx Labs provides the integration, not the proxy account or residential bandwidth.**
 
 - **Selected sites** — Route selected domains through the residential exit. Domain matching requires Xeusx DNS.
 - **All VPN traffic** — Apply residential routing to traffic captured by Xeusx, including applications that use their own encrypted DNS. Only supported traffic is forwarded.
 
 Physical Direct exclusions — traffic kept outside the VPN — and VPN-management traffic retain their existing routes. Changing the routing selection reconnects the VPN on this device.
 
-This release supports **HTTPS and encrypted DNS over IPv4** through the residential exit. UDP, IPv6, and other unsupported traffic within the selected scope are blocked. If the residential exit becomes unavailable, traffic in that scope **stays blocked rather than falling back to another route**.
+Xeusx supports **HTTPS and the provider-compatible encrypted DNS transports below, over IPv4**. UDP, IPv6, and other unsupported traffic within the selected scope are blocked. If the residential exit becomes unavailable, traffic in that scope **stays blocked rather than falling back to another route**. Incompatible DNS settings produce an explicit error; Xeusx does not silently change your resolver.
 
-**HTTPS website content stays encrypted between your device and the website.** With the website's certificate correctly verified, Geonode and network observers cannot read website login credentials, cookies, page contents, or transaction details carried over HTTPS. Encrypted DNS retains its separate TLS protection to the selected resolver.
+Ordinary reconnects on the same server reuse the same authorized device/provider/country session while it remains valid. Changing the selection, requesting **New Session**, expiry, or confirmed session loss creates a replacement. Runtime sessions last up to 30 minutes; residential peers may disappear sooner, and a new session does not guarantee a different IP. DNS and website connections share the selected residential session.
+
+Use **Excluded ports** to protect provider connection ports used elsewhere by entering individual ports or ranges. Exclusions apply across the account's gateways during setup, routing, rotation, and cleanup. Destination HTTPS ports and management API access are unaffected. Retire an existing assignment before excluding its ports.
+
+**HTTPS website content stays encrypted between your device and the website.** With the website's certificate correctly verified, the proxy and network observers cannot read website login credentials, cookies, page contents, or transaction details carried over HTTPS. Encrypted DNS retains its separate TLS protection to your resolver. Xeusx does not install a provider root certificate or intercept website TLS. The provider still handles destination metadata, session information, timing, and traffic volume; protection of the server-to-provider connection differs below.
+
+### Geonode
+
+Geonode uses your account username and password with **configured sticky-session ports**. Configure each port's exit country in Geonode, then enter those ports in Orb. The selectable entry gateway is the connection location into Geonode; the exit country belongs to the configured ports.
+
+- **Port ownership:** Orb assigns one active and one spare port per country to each selected server. Ports retain one server owner across gateways. Configured inventory and excluded ports determine capacity.
+- **Session cleanup:** Xeusx releases only the exact sessions it owns. **Ports resting** means a port remains reserved through a sticky-session safety period; an acknowledged release does not immediately make it reusable. Xeusx does not reset all sessions in your account.
+- **DNS:** Both **DNS over HTTPS (DoH)** and **DNS over TLS (DoT)** are supported through the residential exit.
+- **Usage:** Provider reconciliation contributes to the account allowance and can include other projects sharing that Geonode account. Per-user allowances remain enforced by Xeusx; unconfirmed usage is retained conservatively.
 
 > [!WARNING]
 > **Geonode proxy credentials and connection metadata are exposed.** The current integration uses a plain HTTP CONNECT connection from your VPN server to Geonode, without TLS to the proxy itself. Anyone able to monitor that connection can read the **Geonode proxy username and password** and destination IP/port; destination hostnames may also be visible. Traffic timing and volume remain observable. Enable residential routing only if this exposure is acceptable for your security requirements.
+
+An HTTPS destination keeps website content encrypted, but does not encrypt the initial proxy authentication or CONNECT request. Geonode's HTTP/HTTPS target support should not be confused with TLS on the connection to the proxy itself.
+
+### Decodo
+
+Decodo uses **verified HTTPS to `gate.decodo.com:7000`**. Xeusx checks the gateway certificate and hostname before sending proxy credentials. This encrypts credentials and CONNECT metadata against observers between your VPN server and Decodo; Decodo itself can still see that metadata. See [Decodo's HTTPS proxy documentation](https://help.decodo.com/docs/residential-proxy-protocols).
+
+- **Automatic gateway, chosen exit:** Select exit countries in Orb. France, United Kingdom, and United States are the defaults; each configured country is checked on each assigned server. Country selection specifies the residential exit, not a guaranteed physical entry location.
+- **Named sticky sessions:** Xeusx generates opaque session IDs and changes the ID when the country changes. No sticky-port inventory or Geonode-style port cooldown is needed. Setup uses short-lived sessions, and abandoned sessions expire naturally without an account reset.
+- **Port protection:** Port **7000** is required and cannot be excluded. Country-specific port ranges are not used by this integration, so ports reserved for another application can remain excluded.
+- **DNS:** **DoH is supported; DoT is not supported by this integration.** Other protocols Decodo offers, including SOCKS and MASQUE, are outside the current Xeusx integration.
+
+An optional management API key enables **Provider Usage** for the configured proxy user. The key stays in Orb's protected vault. Reads are limited to once every 15 minutes; [Decodo statistics](https://help.decodo.com/docs/residential-proxy-statistics) use UTC and may lag. They can include other applications sharing that user and never replace Xeusx's quota ledger. Missing credentials or errors such as **HTTP 409** show **Unavailable**, retain the last successful observation with its period and freshness, and never imply zero usage. Routing and Xeusx allowances work without these statistics.
+
+### Bright Data
+
+Bright Data uses **verified HTTPS to `brd.superproxy.io:44445`**, with certificate and hostname verification before proxy authentication. Website TLS remains separate. Supply the base username in the form `brd-customer-<customer>-zone-<zone>` and the zone password; Xeusx adds the country and session parameters.
+
+- **Automatic gateway and named sessions:** Configure exit countries, with France, United Kingdom, and United States as defaults. There is no configured sticky-port inventory or port cooldown. Port **44445** is required and cannot be excluded.
+- **Predictable failure behavior:** Xeusx uses Bright Data's [fixed-peer session control](https://docs.brightdata.com/api-reference/proxy/keep_same_peer_in_session) and [blocked fallback routing](https://docs.brightdata.com/api-reference/proxy/request_error_handling). A restricted website fails individually; it does not switch providers, bypass residential routing, or repeatedly rotate sessions. A generic HTTP 502 alone does not trigger rotation.
+- **DNS:** **DoH is supported; DoT is not supported by this integration.** HTTPS forwarding and DNS both use the chosen IPv4 residential session.
+
+> [!IMPORTANT]
+> **Account and zone permissions must pass Xeusx qualification.** Bright Data's [network access policy](https://docs.brightdata.com/products/residential/network-access) can restrict destinations or require account verification. A working demo site or country test is insufficient: each assigned server must also pass literal-IP forwarding, website TLS verification, anonymous-access rejection, and same-session DoH checks. If those checks are blocked, Orb withholds activation. Xeusx does not bypass the checks, disable certificate verification, or install additional provider trust roots. Successful qualification does not guarantee that every website is permitted.
+
+An optional management API key reads [zone bandwidth statistics](https://docs.brightdata.com/api-reference/account-management-api/Get_the_bandwidth_stats_for_a_Zone), bound to the configured customer and zone. The key stays in Orb's vault, and reads are limited to once every 15 minutes. Reporting periods, observation times, and delayed usage are shown separately from Xeusx allowances. Missing credentials, errors, or unverifiable responses show **Unavailable** while retaining the previous observation. Usage from other applications never changes Xeusx quotas or provider readiness. Routing does not require the statistics API.
 
 ---
 
