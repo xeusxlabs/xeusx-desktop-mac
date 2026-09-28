@@ -59,7 +59,7 @@ Start with a supported Ubuntu Linux server you own or are authorized to administ
 - **Guided provisioning** — install and configure a complete Xeusx VPN on a fresh server, then confirm it is healthy.
 - **Access management** — create separate access profiles, scope each profile to all or selected servers, and export one encrypted Xeusx token per profile.
 - **Connection methods on demand** — enable or disable available connection methods per server.
-- **Built-in hardening options** — configure ad and tracker blocking, connection multiplexing, automatic server recovery, and update behavior where available.
+- **Built-in hardening options** — block known ad and tracker domains, configure connection multiplexing, and control automatic server recovery and updates where available. Domain filtering cannot selectively remove ads that share domains with videos or streams, including some YouTube and Twitch ads—blocking those domains would also block the content.
 - **Decentralized fleet coordination** — join servers into one self-hosted fleet, distribute voting across independent failure domains, remove unavailable members safely, and control everything from Orb on your Mac.
 - **Maintenance scheduling** — keep operating-system packages and VPN components updated on a schedule you control.
 

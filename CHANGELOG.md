@@ -5,6 +5,25 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.2+50 — 2026-09-28
+
+### Improved
+
+- **Clearer connection diagnostics** — Logs now separate DNS and handshake failures from canceled work, show activity since the previous sample, and identify the active protection lists.
+- **Clearer filtering descriptions** — Explains what domain blocking protects against and why some ads delivered alongside videos or streams may remain.
+
+### Fixed
+
+- Fixed a WireGuard startup race that could affect connection setup.
+- Corrected false handshake-failure reports after successful TLS and QUIC connections, and separated canceled DNS lookups from resolver errors.
+- Stopped unused residential status reads after leaving Orb or switching away from Proxies. Status-read errors now recommend Refresh without suggesting unfinished setup.
+
+This is a client update. No Orb **Update all** or token reimport is required for these changes.
+
+SHA-256 (`Xeusx+.dmg`): `b8f797d7009c58249f181e1a196c3d2effc0d73c0339b290be75782fc8c86934`
+
+Orb server agent: `26.3.0+32`
+
 ## Xeusx+ 26.3.1+49 — 2026-09-25
 
 ### Design improvements

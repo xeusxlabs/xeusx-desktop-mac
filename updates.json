@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "49",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.1+49/Xeusx+.dmg",
+    "build": "50",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.2+50/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "### Design improvements\n\n- Refined native Liquid Glass styling for macOS 27, with a more consistent appearance across Settings, Traffic Rules, and Orb.\n- Aligned Residential Proxy dropdown colors with Settings for a cohesive look in Light and Dark modes.",
-    "sha256": "6a08b9d10b0dddd1441a3cd4f8b28771983af19b180a0c930b23bdac880b680e",
-    "version": "26.3.1"
+    "notes": "### Improved\n\n- **Clearer connection diagnostics** \u2014 Logs now separate DNS and handshake failures from canceled work, show activity since the previous sample, and identify the active protection lists.\n- **Clearer filtering descriptions** \u2014 Explains what domain blocking protects against and why some ads delivered alongside videos or streams may remain.\n\n### Fixed\n\n- Fixed a WireGuard startup race that could affect connection setup.\n- Corrected false handshake-failure reports after successful TLS and QUIC connections, and separated canceled DNS lookups from resolver errors.\n- Stopped unused residential status reads after leaving Orb or switching away from Proxies. Status-read errors now recommend Refresh without suggesting unfinished setup.\n\nThis is a client update. No Orb **Update all** or token reimport is required for these changes.",
+    "sha256": "b8f797d7009c58249f181e1a196c3d2effc0d73c0339b290be75782fc8c86934",
+    "version": "26.3.2"
   }
 }
