@@ -5,6 +5,28 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.3+51 — 2026-10-21
+
+### Fixed
+
+- Fixed DNS channels retaining completed queries, which could cause website-loading stalls. Unrelated DNS questions can now proceed concurrently within the existing limits.
+- Improved Direct connections on networks without usable IPv6 and avoided repeated connection attempts to the same unreachable address.
+- Fixed canceled Hysteria2 connection requests retaining pending work.
+- Improved removal of unavailable cluster members, including user-access synchronization, residential allowances, and resumable voting-role changes.
+- Orb now pauses membership changes when their management connection depends on a cluster VPN path that the operation would interrupt, with clearer recovery guidance.
+
+### Improved
+
+- Updated the domain-matching examples in Traffic Rules.
+- Detailed Logs now include DNS processing delays, unanswered Direct and VPN connections, and engine memory measurements to help diagnose slow browsing.
+- Incomplete connectivity checks can recover through ongoing health checks without an unnecessary reconnect.
+
+This is a client update. No Orb **Update all** or token reimport is required for these changes. Existing traffic rules and protection settings are preserved.
+
+SHA-256 (`Xeusx+.dmg`): `5a404961fd517c127be0e0688f4f5a35d965e768aafab20fcb667c32dcc99532`
+
+Orb server agent: `26.3.0+32`
+
 ## Xeusx+ 26.3.2+50 — 2026-09-28
 
 ### Improved
