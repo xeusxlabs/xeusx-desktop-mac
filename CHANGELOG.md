@@ -5,6 +5,23 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.4+52 — 2026-10-25
+
+### Improved
+
+- Automatic failover now tries eligible direct connections in the current exit country, followed by available multi-hop routes with the same exit country, before moving to another country.
+
+### Fixed
+
+- Fixed importing Traffic Rules documents containing Residential Proxy settings.
+- Fixed failed Hysteria2 handshakes delaying tunnel shutdown and the next failover attempt.
+
+This is a client update. No Orb **Update all** or token reimport is required. Existing connections, traffic rules, and protection settings are preserved.
+
+SHA-256 (`Xeusx+.dmg`): `3b1102df4958841969c948485dd281f67b4b15de213c364e00cfb7dc2bd484ae`
+
+Orb server agent: `26.3.0+32`
+
 ## Xeusx+ 26.3.3+51 — 2026-10-21
 
 ### Fixed
