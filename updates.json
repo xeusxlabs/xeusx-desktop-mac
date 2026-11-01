@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "52",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.4+52/Xeusx+.dmg",
+    "build": "58",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.10+58/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "### Improved\n\n- Automatic failover now tries eligible direct connections in the current exit country, followed by available multi-hop routes with the same exit country, before moving to another country.\n\n### Fixed\n\n- Fixed importing Traffic Rules documents containing Residential Proxy settings.\n- Fixed failed Hysteria2 handshakes delaying tunnel shutdown and the next failover attempt.\n\nThis is a client update. No Orb **Update all** or token reimport is required. Existing connections, traffic rules, and protection settings are preserved.",
-    "sha256": "3b1102df4958841969c948485dd281f67b4b15de213c364e00cfb7dc2bd484ae",
-    "version": "26.3.4"
+    "notes": "- Fixed routing and Orb management-access issues with single-hop and multi-hop VPN connections.\n- Fixed residential proxy choices disappearing after an automatic connection-check expiry. Valid checks now remain usable while the provider configuration is unchanged.\n- Fixed **Update all** failures during residential-service verification and DNS maintenance that could require repeated attempts.\n- Fixed valid cluster reads being rejected while a server-removal operation was queued.\n- Improved cluster-verification and residential-provider status messages.\n\nTo apply the server fixes, run **Orb \u2192 Update all** at your chosen maintenance time, then refresh connections. If you also use iOS, install **iOS build 15 or later before updating servers**. Existing connection settings and Traffic Rules are preserved. Device authorization, quotas, session limits, and port cooldowns remain enforced.",
+    "sha256": "c598f1fcb41b258ccd852c06a5fc82fb5f2b701a3fe1d8aeda70a966fc10953c",
+    "version": "26.3.10"
   }
 }

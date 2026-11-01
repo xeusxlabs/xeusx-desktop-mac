@@ -5,6 +5,20 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.10+58 — 2026-11-01
+
+- Fixed routing and Orb management-access issues with single-hop and multi-hop VPN connections.
+- Fixed residential proxy choices disappearing after an automatic connection-check expiry. Valid checks now remain usable while the provider configuration is unchanged.
+- Fixed **Update all** failures during residential-service verification and DNS maintenance that could require repeated attempts.
+- Fixed valid cluster reads being rejected while a server-removal operation was queued.
+- Improved cluster-verification and residential-provider status messages.
+
+To apply the server fixes, run **Orb → Update all** at your chosen maintenance time, then refresh connections. If you also use iOS, install **iOS build 15 or later before updating servers**. Existing connection settings and Traffic Rules are preserved. Device authorization, quotas, session limits, and port cooldowns remain enforced.
+
+SHA-256 (`Xeusx+.dmg`): `c598f1fcb41b258ccd852c06a5fc82fb5f2b701a3fe1d8aeda70a966fc10953c`
+
+Orb server agent: `26.3.0+35`
+
 ## Xeusx+ 26.3.4+52 — 2026-10-25
 
 ### Improved
