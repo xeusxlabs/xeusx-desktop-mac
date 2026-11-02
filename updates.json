@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "58",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.10+58/Xeusx+.dmg",
+    "build": "63",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.12+63/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Fixed routing and Orb management-access issues with single-hop and multi-hop VPN connections.\n- Fixed residential proxy choices disappearing after an automatic connection-check expiry. Valid checks now remain usable while the provider configuration is unchanged.\n- Fixed **Update all** failures during residential-service verification and DNS maintenance that could require repeated attempts.\n- Fixed valid cluster reads being rejected while a server-removal operation was queued.\n- Improved cluster-verification and residential-provider status messages.\n\nTo apply the server fixes, run **Orb \u2192 Update all** at your chosen maintenance time, then refresh connections. If you also use iOS, install **iOS build 15 or later before updating servers**. Existing connection settings and Traffic Rules are preserved. Device authorization, quotas, session limits, and port cooldowns remain enforced.",
-    "sha256": "c598f1fcb41b258ccd852c06a5fc82fb5f2b701a3fe1d8aeda70a966fc10953c",
-    "version": "26.3.10"
+    "notes": "- Fixed setup and cluster-join failures affecting newly added servers.\n- Fixed saving custom server display names and improved save-error messages.\n- Improved residential proxy setup for new and replacement servers while preserving existing port reservations and usage limits.\n- Fixed resuming provider setup after cluster inventory changes.\n- Improved residential proxy connection checks when an encrypted-DNS endpoint is unreachable, while retaining TLS verification.\n- Clarified residential gateway status for servers waiting to join the cluster.\n\nIncludes Orb server agent 26.3.0 (38). Update managed servers to apply the server-side fixes.",
+    "sha256": "42cda7cb97194e6fbb7a6e02f82de5eed5adc6d8c9f2ed5b7d12bb046e098000",
+    "version": "26.3.12"
   }
 }
