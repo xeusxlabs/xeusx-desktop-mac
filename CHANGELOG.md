@@ -5,6 +5,16 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.13+64 — 2026-11-18
+
+- Fixed saved multi-hop routes that could fail even when the next server was reachable over WireGuard. Eligible routes now try the server's WireGuard address first and can fall back to its authenticated public endpoint.
+- Improved protocol availability and latency checks when a connectivity-check service is unreachable.
+- Fixed a resource leak when switching away from a tunnel with active UDP traffic.
+
+SHA-256 (`Xeusx+.dmg`): `9fa426e5694667184a08853cbe88860a12f50b880af63a1c6d2e7de5ce18bf53`
+
+Orb server agent: `26.3.0+38`
+
 ## Xeusx+ 26.3.12+63 — 2026-11-02
 
 - Fixed setup and cluster-join failures affecting newly added servers.
