@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "64",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.13+64/Xeusx+.dmg",
+    "build": "65",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.14+65/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Fixed saved multi-hop routes that could fail even when the next server was reachable over WireGuard. Eligible routes now try the server's WireGuard address first and can fall back to its authenticated public endpoint.\n- Improved protocol availability and latency checks when a connectivity-check service is unreachable.\n- Fixed a resource leak when switching away from a tunnel with active UDP traffic.",
-    "sha256": "9fa426e5694667184a08853cbe88860a12f50b880af63a1c6d2e7de5ce18bf53",
-    "version": "26.3.13"
+    "notes": "- Fixed a false \u201cuser access is not fully synchronized\u201d warning when the reply to a successful cluster update timed out.\n- Fixed a case where stale server health readings prevented Orb from synchronizing access for a newly joined server.\n- Resuming an interrupted server setup now continues the saved cluster join. Orb hides the Resume prompt while the join is running.",
+    "sha256": "6e0150d381baba9c4f045b6228ff60cf0992f09f3e7a8ef773923730efd18125",
+    "version": "26.3.14"
   }
 }

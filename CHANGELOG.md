@@ -5,6 +5,16 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.14+65 — 2026-11-19
+
+- Fixed a false “user access is not fully synchronized” warning when the reply to a successful cluster update timed out.
+- Fixed a case where stale server health readings prevented Orb from synchronizing access for a newly joined server.
+- Resuming an interrupted server setup now continues the saved cluster join. Orb hides the Resume prompt while the join is running.
+
+SHA-256 (`Xeusx+.dmg`): `6e0150d381baba9c4f045b6228ff60cf0992f09f3e7a8ef773923730efd18125`
+
+Orb server agent: `26.3.0+38`
+
 ## Xeusx+ 26.3.13+64 — 2026-11-18
 
 - Fixed saved multi-hop routes that could fail even when the next server was reachable over WireGuard. Eligible routes now try the server's WireGuard address first and can fall back to its authenticated public endpoint.
