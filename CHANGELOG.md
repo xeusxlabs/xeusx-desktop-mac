@@ -5,6 +5,16 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.17+81 — 2026-11-23
+
+- Orb keeps users visible until removal is verified across the cluster.
+- Fixed an unnecessary agent update warning when a server temporarily could not verify a user removal.
+- Fixed a server issue that could leave revoked credentials active after an interrupted transport update.
+
+SHA-256 (`Xeusx+.dmg`): `25072ca006e2e2f302bcd7b1ca296f1b1be23d5de930178fa13863583bce66bb`
+
+Orb server agent: `26.3.0+47`
+
 ## Xeusx+ 26.3.16+80 — 2026-11-23
 
 - Fixed a DNS timeout that could prevent a multi-hop connection from starting when the next server’s WireGuard link was down but its public address was reachable.

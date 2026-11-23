@@ -1,10 +1,10 @@
 {
   "plus": {
-    "build": "80",
-    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.16+80/Xeusx+.dmg",
+    "build": "81",
+    "dmgURL": "https://github.com/xeusxlabs/xeusx-desktop-mac/releases/download/v26.3.17+81/Xeusx+.dmg",
     "minimumSystemVersion": "14.0",
-    "notes": "- Fixed a DNS timeout that could prevent a multi-hop connection from starting when the next server\u2019s WireGuard link was down but its public address was reachable.",
-    "sha256": "996ba6b8cff6802aa8e0261b9e287208add5a9049c30d15051dd36c2c7dac0b9",
-    "version": "26.3.16"
+    "notes": "- Orb keeps users visible until removal is verified across the cluster.\n- Fixed an unnecessary agent update warning when a server temporarily could not verify a user removal.\n- Fixed a server issue that could leave revoked credentials active after an interrupted transport update.",
+    "sha256": "25072ca006e2e2f302bcd7b1ca296f1b1be23d5de930178fa13863583bce66bb",
+    "version": "26.3.17"
   }
 }
