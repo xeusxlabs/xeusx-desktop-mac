@@ -5,6 +5,14 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.16+80 — 2026-11-23
+
+- Fixed a DNS timeout that could prevent a multi-hop connection from starting when the next server’s WireGuard link was down but its public address was reachable.
+
+SHA-256 (`Xeusx+.dmg`): `996ba6b8cff6802aa8e0261b9e287208add5a9049c30d15051dd36c2c7dac0b9`
+
+Orb server agent: `26.3.0+46`
+
 ## Xeusx+ 26.3.15+79 — 2026-11-23
 
 - Added **Zyro**.
