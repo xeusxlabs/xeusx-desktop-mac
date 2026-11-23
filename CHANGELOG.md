@@ -5,6 +5,17 @@ Each release lists what changed, the bundled **Orb server agent** version, and t
 **SHA-256** of the signed `Xeusx+.dmg` so you can verify your download. The in-app
 updater checks the same checksum and a cryptographic signature before installing.
 
+## Xeusx+ 26.3.15+79 — 2026-11-23
+
+- Added **Zyro**.
+- Canceling a latency check no longer interrupts connection synchronization. Xeusx discards measurements taken across a network change or a change to the device’s Zyro credentials.
+- Xeusx preserves saved connections when their storage format is newer than the app supports.
+- Orb’s **Update all** retries interrupted access verification once and identifies the affected server and stage if an update stops.
+
+SHA-256 (`Xeusx+.dmg`): `394bf93ac2ce69d12d362b42927343e8b5f63d7e738e8c0b4b1fbf09865784d1`
+
+Orb server agent: `26.3.0+46`
+
 ## Xeusx+ 26.3.14+65 — 2026-11-19
 
 - Fixed a false “user access is not fully synchronized” warning when the reply to a successful cluster update timed out.

@@ -114,6 +114,7 @@ Supported profile families may include:
 - **Hysteria**, **Hysteria2**, **TUIC**, **mKCP**
 - **Trojan**, **VMess**, **Shadowsocks**
 - **ShadowTLS**, **WireGuard**
+- **Zyro**
 
 Availability depends on your Xeusx connections and the configuration of each server.
 
@@ -256,8 +257,7 @@ Compare the result with the checksum in **[CHANGELOG.md](CHANGELOG.md)**. The in
 ## Install
 
 1. Open **`Xeusx+.dmg`** and drag **Xeusx+** to **Applications**.
-2. If macOS shows a warning because the app is distributed outside the App Store, open it from Applications using **Control-click → Open**, then confirm.
-3. On first connection, macOS may ask for administrator approval to install or activate the helper needed to create the VPN interface.
+2. On first connection, macOS may ask for administrator approval to install or activate the helper needed to create the VPN interface.
 
 ---
 
